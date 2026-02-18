@@ -1,0 +1,30 @@
+.Accordian-container {
+    background-color: mediumaquamarine;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.section {
+    border-bottom: 2px solid black;
+    max-width: 400px;
+    width: auto;
+    height: auto;
+}
+
+.accoridan-button {
+    text-align: center;
+    color: black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    overflow: wrap;
+    padding: 20px;
+}
