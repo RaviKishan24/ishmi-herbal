@@ -10,6 +10,8 @@
 // //   key: "abc123" } 
 // const location=useLocation(); // const isHome=location.pathname==="/" // if home(path '/) it will true else it become false
 
+import pureAryuvedic1 from "../assets/productImages/pure aruvedic1.jpg"
+import pureAryuvedic2 from "../assets/productImages/pure aruvedic2.jpg"
 
 import "../components/Home.css"
 import video1 from "../assets/homePage/video1.mp4"
@@ -25,10 +27,39 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules"
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+
 import { Link, useNavigate } from "react-router"
 import { useEffect, useState } from "react"
 import { toast } from "react-hot-toast"
-import HomeBanner from "./HomeBanner.jsx"
+
+import HomeBanner from "./HomeBanner.jsx";
+import AuraBloomScalpRestore from "../assets/productImages/AuraBloom Scalp Restore.jpg";
+import BotaniCareGrowthSerum from "../assets/productImages/BotaniCare Growth Serum.jpg";
+import EarthGlowRoseTherapy from "../assets/productImages/EarthGlow Rose Therapy.jpg";
+import GlowRootHerbalEssence from "../assets/productImages/GlowRoot Herbal Essence.jpg";
+import GreenAuraCocoaRepair from "../assets/productImages/GreenAura Cocoa Repair.jpg";
+import HerbaLuxVelvetLipShield from "../assets/productImages/HerbaLux Velvet Lip Shield.jpg";
+import LumiHerbVitaminShield from "../assets/productImages/LumiHerb Vitamin Shield.jpg";
+import NatureNestCoconutFusion from "../assets/productImages/NatureNest Coconut Fusion.jpg";
+import PureLeafSkinRevivalGel from "../assets/productImages/PureLeaf Skin Revival Gel.jpg";
+import RadianceHairElixir from "../assets/productImages/Radiance Hair Elixir.jpg";
+import SilkPetalLipNectar from "../assets/productImages/SilkPetal Lip Nectar.jpg";
+import VitalRootSkinDefender from "../assets/productImages/VitalRoot Skin Defender.jpg";
+
+const sliderImages = [
+    AuraBloomScalpRestore,
+    BotaniCareGrowthSerum,
+    EarthGlowRoseTherapy,
+    GlowRootHerbalEssence,
+    GreenAuraCocoaRepair,
+    HerbaLuxVelvetLipShield,
+    LumiHerbVitaminShield,
+    NatureNestCoconutFusion,
+    PureLeafSkinRevivalGel,
+    RadianceHairElixir,
+    SilkPetalLipNectar,
+    VitalRootSkinDefender
+];
 
 
 
@@ -125,15 +156,24 @@ function Home() {
             <HomeBanner />
             <div className='midSection'>
                 <div className='MiddleTexts'>
-                    <h1>Welcome To <span>ISHMI - Beauty That Heals</span></h1>
-                    <p>Rooted in Ancient Ayurveda and crafted by experts,
-                        ISHMI offers skincare and wellness products that nourish, heal, and restore.
+                    <h1>Welcome To <span>Ayurveda Wellness Care</span></h1>
+
+                    <p>
+                        Rooted in the timeless wisdom of Ayurveda, Ayurveda Wellness Care
+                        brings you premium herbal products crafted to nourish your skin,
+                        strengthen your hair, and support holistic wellness.
                     </p>
-                    <p>Healing You, Naturally, Every Day, Because You Deserve True Ayurveda.</p>
-                    <p>Be radiant. <span>Be nourished.Be ISHMI! </span></p>
+
+                    <p>
+                        Pure Herbs. Natural Wellness. Trusted Ayurvedic Care.
+                    </p>
+
+                    <p>
+                        Be Healthy. <span>Be Natural. Be Ayurveda Wellness Care.</span>
+                    </p>
                 </div>
 
-                <Swiper className="swiper" modules={[Navigation, Pagination, Autoplay]} autoplay={{ delay: 6000, disableOnInteraction: false }} pagination={true} breakpoints={{310:{slidesPerView:2}, 480: { slidesPerView: 2 },  768: { slidesPerView: 3 }, 1024: { slidesPerView: 5 } }} spaceBetween={10}>
+                <Swiper className="swiper" modules={[Navigation, Pagination, Autoplay]} autoplay={{ delay: 6000, disableOnInteraction: false }} pagination={true} breakpoints={{ 310: { slidesPerView: 2 }, 480: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 5 } }} spaceBetween={10}>
                     <SwiperSlide className="swiper-slide-video"  >   <video className='midsection_video' src={video1} autoPlay muted playsInline></video></SwiperSlide>
                     <SwiperSlide className="swiper-slide-video">  <video className='midsection_video' src={video2} autoPlay muted playsInline></video></SwiperSlide>
                     <SwiperSlide className="swiper-slide-video"><video className='midsection_video' src={video3} autoPlay muted playsInline></video></SwiperSlide>
@@ -150,7 +190,7 @@ function Home() {
                 <p>Our Most-Loved Essentials—Tried, Tested, and Trusted!
                     that our customers can't live without.</p>
 
-                <Swiper className="swiper" modules={[Navigation]} navigation={true} breakpoints={{ 310:{slidesPerView:2}, 480: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }} spaceBetween={10}>
+                <Swiper className="swiper" modules={[Navigation]} navigation={true} breakpoints={{ 310: { slidesPerView: 2 }, 480: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }} spaceBetween={10}>
                     {bestSellerList.map((list, index) => (
                         <SwiperSlide key={index}  >
                             <div className="cards" >
@@ -188,9 +228,12 @@ function Home() {
 
             <div className='SkinHairHealth'>
                 <h2>Explore fresh formulations designed to nourish your skin, hair, and health.</h2>
-                <p>Embrace Holistic Wellness Nurture Your Skin, Hair & Health with Ishmi Beauty Food</p>
+                <p>
+                    Embrace holistic wellness with herbal formulations designed
+                    to nourish your skin, strengthen your hair, and support overall health.
+                </p>
                 <div className='Best_Sellers'>
-                    <Swiper className="swiper" modules={[Navigation]} navigation={true} breakpoints={{ 310:{slidesPerView:2}, 480: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }} spaceBetween={10}>
+                    <Swiper className="swiper" modules={[Navigation]} navigation={true} breakpoints={{ 310: { slidesPerView: 2 }, 480: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }} spaceBetween={10}>
                         {SkinHairHealthList.map((list, index) => (
                             <SwiperSlide key={index}  >
                                 <div className="cards" >
@@ -223,14 +266,20 @@ function Home() {
             <div className='HonoringAyurvedaLegacyContainer'>
                 <div className='HonoringAyurvedaLegacy'>
                     <div className='HonoringAyurvedaLegacyIMGContainer'>
-                        <img className="HonoringAyurvedaLegacyIMG" src={"https://ishmiherbal.com/assets/B12-CzLlu8TU.jpg"} alt="Image1" />
-                        <img className="HonoringAyurvedaLegacyIMG" src={'https://ishmiherbal.com/assets/B13-Bggg-uVp.jpg'} alt="Image2" />
+                        <img className="HonoringAyurvedaLegacyIMG" src={pureAryuvedic1} alt="Image1" />
+                        <img className="HonoringAyurvedaLegacyIMG" src={pureAryuvedic2} alt="Image2" />
                     </div>
                     <div className='HonoringAyurvedaLegacyTexts'>
-                        <p>Honoring Ayurveda’s Legacy</p>
-                        <h1>Pure Ayurvedic Care for Skin, Health & Indulgence</h1>
-                        <p>At ISHMI, we craft pure, plant-based skincare rooted in ancient wisdom. Our gentle,
-                            chemical-free formulas are designed for all ages, blending tradition with modern care for healthy, radiant skin.</p>
+                        <p>Honoring Ayurveda's Timeless Legacy</p>
+
+                        <h1>Pure Herbal Wellness for Skin, Hair & Health</h1>
+
+                        <p>
+                            At Ayurveda Wellness Care, we create premium herbal products inspired
+                            by centuries of Ayurvedic wisdom. Our carefully crafted formulations
+                            combine nature's finest ingredients to promote healthy skin, strong hair,
+                            and overall well-being—naturally and safely.
+                        </p>
                         <button className="HonoringAyurvedaLegacybtn">Shop Now</button>
                     </div>
                 </div>
@@ -240,7 +289,7 @@ function Home() {
                 <h1>Featured Combos</h1>
                 <p>Our Most-Loved Bundles—Tried, Tested, and Trusted!
                     Curated combinations our customers love..</p>
-                <Swiper className="swiper" modules={[Navigation]} navigation={true} breakpoints={{ 310:{slidesPerView:2},  480: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }} spaceBetween={10}>
+                <Swiper className="swiper" modules={[Navigation]} navigation={true} breakpoints={{ 310: { slidesPerView: 2 }, 480: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1280: { slidesPerView: 4 } }} spaceBetween={10}>
                     {SkinHairHealthList.map((list, index) => (
                         <SwiperSlide key={index}  >
                             <div className="cards" >
@@ -275,84 +324,112 @@ function Home() {
 
             <div className='productAboutcontainer'>
 
-                <h2>Ishmi Invites You to Explore Ayurveda’s Secrets </h2>
-                <p className="productAboutparagraph">Nourish your skin, body, and soul with time-tested wisdom and holistic care.</p>
+                <h2>Ayurveda Wellness Care Invites You to Discover Nature's Healing Power</h2>
+
+                <p className="productAboutparagraph">
+                    Experience the benefits of authentic Ayurvedic ingredients for healthier skin,
+                    stronger hair, and a balanced lifestyle.
+                </p>
                 <div className='productAboutSection'>
 
-                    <div className='productAbout' >
-                        <div className="productAboutimgContainer" >
-                            <img src={"https://ishmiherbal.com/uploads/1747138187876-796364869.jpg"} alt="productAboutImage1" className='productAboutimg ' />
+                    <div className='productAbout'>
+                        <div className="productAboutimgContainer">
+                            <img
+                                src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600"
+                                alt="Herbal Ingredients"
+                                className='productAboutimg'
+                            />
                         </div>
                         <div>
-                            <p>4 sep 2024</p>
+                            <p>10 Jan 2026</p>
                             <h3>Why Herbal Skincare is the Future of Beauty</h3>
-                            <p>"In a world where skincare aisles are crowded with chemical-laden products, more people are turnin"</p>
+                            <p>Discover how plant-based ingredients are transforming skincare with safe and effective solutions.</p>
                         </div>
                     </div>
 
-                    <div className='productAbout' >
+                    <div className='productAbout'>
                         <div className="productAboutimgContainer">
-                            <img src={"https://ishmiherbal.com/uploads/1747138187876-796364869.jpg"} alt="productAboutImage1" className='productAboutimg ' />
+                            <img
+                                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600"
+                                alt="Natural Wellness"
+                                className='productAboutimg'
+                            />
                         </div>
                         <div>
-                            <p>4 sep 2024</p>
-                            <h3>Why Herbal Skincare is the Future of Beauty</h3>
-                            <p>"In a world where skincare aisles are crowded with chemical-laden products, more people are turnin"</p>
-                        </div>
-                    </div>
-                    <div className='productAbout' >
-                        <div className="productAboutimgContainer">
-                            <img src={"https://ishmiherbal.com/uploads/1747138187876-796364869.jpg"} alt="productAboutImage1" className='productAboutimg ' />
-                        </div>
-                        <div>
-                            <p>4 sep 2024</p>
-                            <h3>Why Herbal Skincare is the Future of Beauty</h3>
-                            <p>"In a world where skincare aisles are crowded with chemical-laden products, more people are turnin"</p>
+                            <p>15 Jan 2026</p>
+                            <h3>Benefits of Ayurveda for Everyday Wellness</h3>
+                            <p>Learn how Ayurvedic practices can help maintain balance, energy, and long-term health.</p>
                         </div>
                     </div>
 
-                    <div className='productAbout' >
+                    <div className='productAbout'>
                         <div className="productAboutimgContainer">
-                            <img src={"https://ishmiherbal.com/uploads/1747138187876-796364869.jpg"} alt="productAboutImage1" className='productAboutimg ' />
+                            <img
+                                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600"
+                                alt="Ayurvedic Care"
+                                className='productAboutimg'
+                            />
                         </div>
                         <div>
-                            <p>4 sep 2024</p>
-                            <h3>Why Herbal Skincare is the Future of Beauty</h3>
-                            <p>"In a world where skincare aisles are crowded with chemical-laden products, more people are turnin"</p>
+                            <p>20 Jan 2026</p>
+                            <h3>Natural Hair Care with Herbal Ingredients</h3>
+                            <p>Explore powerful herbs that nourish the scalp and promote healthier, stronger hair naturally.</p>
+                        </div>
+                    </div>
+
+                    <div className='productAbout'>
+                        <div className="productAboutimgContainer">
+                            <img
+                                src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800"
+                                alt="Organic Beauty"
+                                className='productAboutimg'
+                            />
+                        </div>
+                        <div>
+                            <p>25 Jan 2026</p>
+                            <h3>The Power of Plant-Based Beauty</h3>
+                            <p>From Aloe Vera to Turmeric, discover nature's most trusted ingredients for radiant skin.</p>
                         </div>
                     </div>
 
                 </div>
-
 
 
             </div>
 
             <div className='image_slider_container'>
-
                 <div className='image_slider_child'>
                     <p>Embrace The Timeless</p>
-                    <h3>Glow Of Nature With Ishmi Beauty Food</h3>
-                    <div className='image_slider'>
-                        <Swiper modules={[Navigation]} navigation={true} breakpoints={{ 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 4 } }}>
-                            <SwiperSlide>   <img src={"https://ishmiherbal.com/assets/bottom1-BRBBhV3A.webp"} alt="" /> </SwiperSlide>
-                            <SwiperSlide>   <img src={"https://ishmiherbal.com/assets/bottom2-DtnUDJ0z.webp"} alt="" /></SwiperSlide>
-                            <SwiperSlide> <img src={"https://ishmiherbal.com/assets/bottom3-MEh0T_S3.webp"} alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={"https://ishmiherbal.com/assets/bottom4-CpQn_5MO.webp"} alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={"https://ishmiherbal.com/assets/bottom4-CpQn_5MO.webp"} alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={"https://ishmiherbal.com/assets/bottom4-CpQn_5MO.webp"} alt="" /></SwiperSlide>
-                        </Swiper>
+                    <h3>Glow Naturally With Ayurveda Wellness Care</h3>
 
+                    <div className='image_slider'>
+                        <Swiper
+                            modules={[Navigation]}
+                            navigation={true}
+                            spaceBetween={15}
+                            breakpoints={{
+                                320: { slidesPerView: 2 },
+                                768: { slidesPerView: 3 },
+                                1024: { slidesPerView: 4 }
+                            }}
+                        >
+                            {sliderImages.map((image, index) => (
+                                <SwiperSlide key={index}>
+                                    <img
+                                        src={image}
+                                        alt={`Ayurveda Wellness Care Product ${index + 1}`}
+                                    />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
                 </div>
-
-
             </div>
 
             <div className='JointheISHMIClub_container'>
                 <div className='JointheISHMIClub'>
 
-                    <h2>Join the ISHMI Club! </h2>
+                    <h2>Join the Ayurveda Wellness Care Family!</h2>
                     <div className='JointheISHMIClub_emailandbutton'>
                         <input type="text" name="" id="" placeholder='Enter Your email' />
                         <button className='JointheISHMIClub_button'>Subscribe</button>

@@ -103,44 +103,56 @@ By forcing flex, you’re fighting Swiper.
 }
 
 .card {
-    padding-bottom: 10px;
-
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
 }
 
 
-
+.product_img {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f5f5f5;
+}
 
 
 
 .product_img img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 8px;
-    transition: ease-in-out;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
 }
 
 .product_img img:hover {
-    transform: scale(1.01);
+    transform: scale(1.05);
     overflow: hidden;
-    background: yellow;
-    border-radius: 20pxs;
+
+    border-radius: 20px;
 }
 
 
 
 .add_to_cart {
-
-    height: 50px;
     width: 90%;
+    height: 48px;
     border-radius: 10px;
+    border: none;
+    background: #8f6943;
     color: white;
-    font-weight: 500;
-    background-color: #8f6943;
-    border: 2px solid white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
+.add_to_cart:hover {
+    opacity: 0.9;
 }
 
 
@@ -160,16 +172,24 @@ By forcing flex, you’re fighting Swiper.
 }
 
 .product_title {
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
 
+    min-height: 60px;
 
-    padding: 10px;
-    /* white-space: nowrap;  use to text in one line*/
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
+/* white-space: nowrap;  use to text in one line
+    white-space: nowrap; */
 .quantity_btn {
     border: 1px solid black;
     width: 70px;
@@ -186,6 +206,7 @@ By forcing flex, you’re fighting Swiper.
 
 .original_price {
     text-decoration: line-through;
+    margin-top: auto;
 }
 
 /*  */
@@ -622,14 +643,66 @@ input:focus {
     }
 
     .productAboutcontainer {
-        
+
         padding: 10px;
     }
-.FeaturedCombos{
-    padding: 10px;
+
+    .FeaturedCombos {
+        padding: 10px;
+    }
+
+
+
+
 }
 
+/* ===========================
+   TABLET
+=========================== */
 
+@media (max-width: 768px) {
+    .product_img {
+        height: 250px;
+    }
 
+    .product_title {
+        font-size: 16px;
+        min-height: 50px;
+    }
 
+    .discount_price,
+    .original_price {
+        font-size: 14px;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 480px) {
+    .product_img {
+        height: 180px;
+    }
+
+    .product_title {
+        font-size: 14px;
+        min-height: 45px;
+        padding: 8px;
+    }
+
+    .quantity_btn {
+        width: 60px;
+        font-size: 12px;
+    }
+
+    .discount_price,
+    .original_price {
+        font-size: 12px;
+    }
+
+    .add_to_cart {
+        height: 40px;
+        font-size: 13px;
+    }
 }
